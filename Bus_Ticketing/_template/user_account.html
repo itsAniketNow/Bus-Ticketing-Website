@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account & Notifications</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(90deg, #1d3557, #457b9d);
+            padding: 15px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #eaeaea;
+            margin: 0 auto;
+            border: 3px solid #457b9d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: #1d3557;
+            font-weight: bold;
+        }
+
+        .profile-details input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Preferences Section */
+        .preferences-section {
+            padding: 20px;
+        }
+
+        .preferences-section h2 {
+            color: #1d3557;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .saved-routes, .favorite-routes {
+            margin: 10px 0;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .saved-routes h3, .favorite-routes h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #457b9d;
+        }
+
+        /* Ticket History */
+        .ticket-history {
+            padding: 20px;
+        }
+
+        .history-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        /* Account Settings */
+        .account-settings {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logout-button {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Notifications Section */
+        .notifications-section {
+            padding: 20px;
+        }
+
+        .notifications-list {
+            margin: 10px 0;
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #457b9d;
+        }
+
+        .notification-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .notification-desc {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .clear-all {
+            text-align: right;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .clear-all button {
+            background-color: #457b9d;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            background: linear-gradient(90deg, #457b9d, #1d3557);
+            color: white;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .icon {
+            text-align: center;
+            font-size: 14px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav .icon i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        nav .icon:hover {
+            color: #f77f00;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>User Account & Notifications</h1>
+    </header>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <div class="profile-pic">Upload</div>
+        <div class="profile-details">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <input type="tel" placeholder="Phone Number">
+        </div>
+    </div>
+
+    <!-- Preferences Section -->
+    <div class="preferences-section">
+        <h2>Preferences</h2>
+        <div class="saved-routes">
+            <h3>Saved Routes:</h3>
+            <p>Mumbai - Pune, Nashik - Aurangabad</p>
+        </div>
+        <div class="favorite-routes">
+            <h3>Favorite Routes:</h3>
+            <p>Thane - Ratnagiri, Nagpur - Kolhapur</p>
+        </div>
+    </div>
+
+    <!-- Notifications Section -->
+    <div class="notifications-section">
+        <h2>Notifications</h2>
+        <div class="notifications-list">
+            <div class="notification-item">
+                <div class="notification-icon">🚌</div>
+                <div>
+                    <div class="notification-title">Bus Delay</div>
+                    <div class="notification-desc">Mumbai-Pune bus delayed by 15 mins</div>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">📢</div>
+                <div>
+                    <div class="notification-title">Route Change</div>
+                    <div class="notification-desc">Thane-Ratnagiri route has a new schedule</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear-all">
+            <button>Clear All</button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+<nav>
+        <div class="icon">
+            <i>🏠</i>
+            <span><a href="C:\Users\Amol\Desktop\A_bus\index.html">Home</a></span>
+        </div>
+        <div class="icon">
+            <i>🚌</i>
+            <span><a href="C:\Users\Amol\Desktop\A_bus\live_tracking.html">Tracking</a></span>
+        </div>
+        <div class="icon">
+            <i>🔍</i>
+            <span><a href="C:\Users\Amol\Desktop\A_bus\route_search.html">Search</a></span>
+        </div>
+        <div class="icon">
+            <i>🎫</i>
+            <span><a href="C:\Users\Amol\Desktop\A_bus\digital_ticketing.html">Tickets</a></span>
+        </div>
+        <div class="icon">
+            <i>👤</i>
+            <span><a href="C:\Users\Amol\Desktop\A_bus\user_account.html">Profile</a></span>
+        </div>
+    </nav>
+</body>
+</html>

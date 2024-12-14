@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00204A;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #00D6C6;
+        }
+
+        p {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .popup {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            background-color: #003A63;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 80%;
+        }
+
+        .popup h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #00D6C6;
+        }
+
+        .popup p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .popup a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #00D6C6;
+            color: #00204A;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .popup a:hover {
+            background-color: #01C2AE;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            background-color: #001A3A;
+            width: 100%;
+            color: #00D6C6;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Mobile-First Responsive Design */
+        @media (max-width: 768px) {
+            .popup-content {
+                padding: 20px;
+                width: 90%;
+                max-width: 350px;
+            }
+
+            .popup h2 {
+                font-size: 24px;
+            }
+
+            .popup p {
+                font-size: 14px;
+            }
+
+            .popup a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/bus_logo.webp' %}" alt="BusScout Logo">
+        </div>
+        <h1>BusScout</h1>
+    </header>
+
+    <div class="popup">
+        <div class="popup-content">
+            <h2>You have successfully logged out!</h2>
+            <p>Thank you for visiting. You can log in again anytime.</p>
+            <a href="{% url 'login' %}">Go to Login</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BusScout. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

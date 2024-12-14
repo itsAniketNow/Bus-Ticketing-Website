@@ -1,0 +1,914 @@
+[
+    {
+        "model": "ticket.route",
+        "pk": 1,
+        "fields": {
+            "start_city": "Mumbai",
+            "destination": "Pune",
+            "price": 500
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 2,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Agra",
+            "price": 300
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 3,
+        "fields": {
+            "start_city": "Bangalore",
+            "destination": "Mysore",
+            "price": 400
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 4,
+        "fields": {
+            "start_city": "Chennai",
+            "destination": "Coimbatore",
+            "price": 350
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 5,
+        "fields": {
+            "start_city": "Hyderabad",
+            "destination": "Warangal",
+            "price": 250
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 6,
+        "fields": {
+            "start_city": "Mumbai",
+            "destination": "Surat",
+            "price": 450
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 7,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Jaipur",
+            "price": 350
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 8,
+        "fields": {
+            "start_city": "Bangalore",
+            "destination": "Chennai",
+            "price": 600
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 9,
+        "fields": {
+            "start_city": "Kolkata",
+            "destination": "Howrah",
+            "price": 200
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 10,
+        "fields": {
+            "start_city": "Mumbai",
+            "destination": "Nashik",
+            "price": 350
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 11,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Chandigarh",
+            "price": 500
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 12,
+        "fields": {
+            "start_city": "Bangalore",
+            "destination": "Hyderabad",
+            "price": 550
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 13,
+        "fields": {
+            "start_city": "Mumbai",
+            "destination": "Goa",
+            "price": 700
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 14,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Lucknow",
+            "price": 450
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 15,
+        "fields": {
+            "start_city": "Chennai",
+            "destination": "Madurai",
+            "price": 500
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 16,
+        "fields": {
+            "start_city": "Pune",
+            "destination": "Kolhapur",
+            "price": 400
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 17,
+        "fields": {
+            "start_city": "Hyderabad",
+            "destination": "Vijayawada",
+            "price": 300
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 18,
+        "fields": {
+            "start_city": "Bangalore",
+            "destination": "Coimbatore",
+            "price": 450
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 19,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Shimla",
+            "price": 600
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 20,
+        "fields": {
+            "start_city": "Mumbai",
+            "destination": "Rajkot",
+            "price": 500
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 21,
+        "fields": {
+            "start_city": "Bangalore",
+            "destination": "Mangalore",
+            "price": 350
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 22,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Varanasi",
+            "price": 700
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 23,
+        "fields": {
+            "start_city": "Chennai",
+            "destination": "Tirunelveli",
+            "price": 450
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 24,
+        "fields": {
+            "start_city": "Hyderabad",
+            "destination": "Khammam",
+            "price": 250
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 25,
+        "fields": {
+            "start_city": "Pune",
+            "destination": "Aurangabad",
+            "price": 300
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 26,
+        "fields": {
+            "start_city": "Bangalore",
+            "destination": "Ooty",
+            "price": 600
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 27,
+        "fields": {
+            "start_city": "Delhi",
+            "destination": "Patiala",
+            "price": 350
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 28,
+        "fields": {
+            "start_city": "Mumbai",
+            "destination": "Daman",
+            "price": 400
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 29,
+        "fields": {
+            "start_city": "Chennai",
+            "destination": "Bangalore",
+            "price": 550
+        }
+    },
+    {
+        "model": "ticket.route",
+        "pk": 30,
+        "fields": {
+            "start_city": "Hyderabad",
+            "destination": "Bhubaneswar",
+            "price": 650
+        }
+    },
+    
+        {
+            "model": "ticket.route",
+            "pk": 31,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Vadodara",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 32,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Patna",
+                "price": 700
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 33,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Kochi",
+                "price": 750
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 34,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Tiruchirapalli",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 35,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Nagpur",
+                "price": 800
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 36,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Surat",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 37,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Indore",
+                "price": 600
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 38,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Pondicherry",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 39,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Bhubaneswar",
+                "price": 700
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 40,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Bhopal",
+                "price": 650
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 41,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Ahmedabad",
+                "price": 500
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 42,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Chandigarh",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 43,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Mysore",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 44,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Madurai",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 45,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Visakhapatnam",
+                "price": 700
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 46,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Vapi",
+                "price": 300
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 47,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Kanpur",
+                "price": 500
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 48,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Coimbatore",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 49,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Salem",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 50,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Aurangabad",
+                "price": 600
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 51,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Rajkot",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 52,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Shimla",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 53,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Kochi",
+                "price": 800
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 54,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Tirunelveli",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 55,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Bhubaneswar",
+                "price": 650
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 56,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Goa",
+                "price": 750
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 57,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Gurugram",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 58,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Ooty",
+                "price": 600
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 59,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Pondicherry",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 60,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Vijayawada",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 61,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Navi Mumbai",
+                "price": 150
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 62,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Ludhiana",
+                "price": 500
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 63,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Chennai",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 64,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Coimbatore",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 65,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Kolkata",
+                "price": 850
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 66,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Pune",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 67,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Jaipur",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 68,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Trivandrum",
+                "price": 850
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 69,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Madurai",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 70,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Bangalore",
+                "price": 600
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 71,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Kolkata",
+                "price": 850
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 72,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Gwalior",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 73,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Hubli",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 74,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Tiruvannamalai",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 75,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Srikakulam",
+                "price": 500
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 76,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Latur",
+                "price": 300
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 77,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Rohtak",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 78,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Belgaum",
+                "price": 500
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 79,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Nagapattinam",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 80,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Warangal",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 81,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Satara",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 82,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Karnal",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 83,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Karwar",
+                "price": 650
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 84,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Vellore",
+                "price": 300
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 85,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Ramagundam",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 86,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Jalna",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 87,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Gorakhpur",
+                "price": 700
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 88,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Mangalore",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 89,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Erode",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 90,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Khammam",
+                "price": 350
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 91,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Nasik",
+                "price": 300
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 92,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Meerut",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 93,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Tumkur",
+                "price": 300
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 94,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Vellore",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 95,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Khammam",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 96,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Nashik",
+                "price": 250
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 97,
+            "fields": {
+                "start_city": "Delhi",
+                "destination": "Bhubaneswar",
+                "price": 800
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 98,
+            "fields": {
+                "start_city": "Bangalore",
+                "destination": "Chennai",
+                "price": 550
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 99,
+            "fields": {
+                "start_city": "Chennai",
+                "destination": "Madurai",
+                "price": 450
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 100,
+            "fields": {
+                "start_city": "Hyderabad",
+                "destination": "Warangal",
+                "price": 400
+            }
+        },
+        {
+            "model": "ticket.route",
+            "pk": 101,
+            "fields": {
+                "start_city": "Mumbai",
+                "destination": "Delhi",
+                "price": 700
+            }
+        }
+ 
+    ]
+    

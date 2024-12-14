@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Search Screen</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(90deg, #2c3e50, #457b9d);
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header input {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            width: 30%;
+            font-size: 16px;
+        }
+
+        header button {
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        header button:hover {
+            background-color: #f77f00;
+        }
+
+        /* Suggestions Area */
+        #suggestions {
+            padding: 15px;
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .route {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .route:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .route-info {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .route-map {
+            width: 80px;
+            height: 80px;
+            background-color: #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #777;
+        }
+
+        /* Map View Toggle */
+        .toggle-map {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .toggle-map button {
+            padding: 10px 20px;
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .toggle-map button:hover {
+            background-color: #457b9d;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            background: linear-gradient(90deg, #457b9d, #2c3e50);
+            color: white;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .icon {
+            text-align: center;
+            font-size: 14px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav .icon i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        nav .icon:hover {
+            color: #f77f00;
+            transform: scale(1.1);
+        }
+
+        /* No Routes Found */
+        #no-routes {
+            color: #e63946;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .book-ticket-btn {
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .book-ticket-btn:hover {
+            background-color: #f77f00;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            padding: 10px 20px;
+            background-color: #00D6C6;
+            color: #00204A;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #01C2AE;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logout Button -->
+    <button class="logout-btn" onclick="window.location.href='/logout/'">Logout</button>
+
+    <!-- Header Section -->
+    <header>
+        <input type="text" id="from" placeholder="From Location">
+        <input type="text" id="to" placeholder="To Location">
+        <button onclick="searchRoutes()">Search</button>
+    </header>
+
+    <!-- Suggestions Area -->
+    <div id="suggestions"></div>
+
+    <!-- No Routes Found Message -->
+    <div id="no-routes">No routes found. Please try again.</div>
+
+    <!-- Map View Toggle -->
+    <!-- div class="toggle-map">
+        <button onclick="toggleMap()">View Full Map</button>
+    </div -->
+
+    <script>
+        // Get routes from Django context
+        const routes = JSON.parse('{{ routes_json | escapejs }}'); // The routes data passed from the backend
+
+        // JavaScript to handle search functionality
+        function searchRoutes() {
+            const from = document.getElementById('from').value.toLowerCase();
+            const to = document.getElementById('to').value.toLowerCase();
+            const suggestions = document.getElementById('suggestions');
+            const noRoutes = document.getElementById('no-routes');
+
+            // Clear previous results
+            suggestions.innerHTML = '';
+
+            // Filter routes based on search
+            const filteredRoutes = routes.filter(route => 
+                route.start_city.toLowerCase().includes(from) && route.destination.toLowerCase().includes(to)
+            );
+
+            // Show routes or no routes message
+            if (filteredRoutes.length > 0) {
+                filteredRoutes.forEach(route => {
+                    const routeElement = document.createElement('div');
+                    routeElement.classList.add('route');
+                    routeElement.innerHTML = `
+                        <div class="route-info">
+                            <h3>${route.start_city} to ${route.destination}</h3>
+                            <p>Price: ₹${route.price}</p>
+                        </div>  
+                        <!-- div class="route-map">Map</div -->
+                        <button onclick="bookTicket(${route.pk})" class="book-ticket-btn">Book Ticket</button>
+                    `;
+                    suggestions.appendChild(routeElement);
+                });
+                noRoutes.style.display = 'none'; // Hide "No routes" message
+            } else {
+                noRoutes.style.display = 'block'; // Show "No routes" message
+            }
+        }
+
+        // Function to redirect to the ticket booking page for a selected route
+        function bookTicket(routeId) {
+            // You can dynamically generate the URL for the booking page based on the route's pk
+            window.location.href = `/book-ticket/${routeId}/`; // Assuming your booking page URL structure
+        }
+    </script>
+</body>
+</html>

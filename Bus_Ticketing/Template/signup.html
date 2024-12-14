@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00204A;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #00D6C6;
+        }
+
+        p {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            background-color: #003A63;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 14px;
+            color: #ffffff;
+            align-self: flex-start;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background-color: #005A8C;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .remember input {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #00D6C6;
+            color: #00204A;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #01C2AE;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            background-color: #001A3A;
+            width: 100%;
+            color: #00D6C6;
+            position: fixed;
+            bottom: 0;
+        }
+
+        /* Mobile-First Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding-bottom: 60px; /* Leave space for footer */
+            }
+
+            form {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .nav-item {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/bus_logo.webp' %}" alt="BusScout Logo">
+        </div>
+        <h1>Sign Up for BusScout</h1>
+    </header>
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="remember">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Have an account? <a href="{% url 'login' %}">Login</a></p>
+    </main>
+    <footer>
+        <p>&copy; 2024 BusScout. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

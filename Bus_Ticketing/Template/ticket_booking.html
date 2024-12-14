@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1d3557, #457b9d);
+            padding: 15px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #1d3557;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .ticket-options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1d3557;
+        }
+
+        .ticket-options select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .payment-section button {
+            padding: 10px 20px;
+            background-color: #457b9d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .payment-section button:hover {
+            background-color: #1d3557;
+        }
+
+        .active-tickets, .ticket-history {
+            margin-top: 30px;
+        }
+
+        .ticket-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ticket-card h3 {
+            margin: 0;
+            color: #1d3557;
+        }
+
+        .qr-code {
+            width: 60px;
+            height: 60px;
+            background: #e63946;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            background: linear-gradient(90deg, #457b9d, #1d3557);
+            color: white;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .icon {
+            text-align: center;
+            font-size: 14px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav .icon i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        nav .icon:hover {
+            color: #f77f00;
+            transform: scale(1.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            padding: 10px 20px;
+            background-color: #00D6C6;
+            color: #00204A;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            top: 11px;
+            right: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #01C2AE;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logout Button -->
+    <button class="logout-btn" onclick="window.location.href='/logout/'">Logout</button>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Ticket Booking</h1>
+    </header>
+
+    <!-- Ticket Type Selection Section -->
+    <div class="section ticket-options">
+        <h2>Select Ticket Type</h2>
+        <label for="ticketType">Ticket Type:</label>
+        <select id="ticketType">
+            <option value="Single Ride">Single Ride</option>
+            <option value="Multiple Rides">Multiple Rides</option>
+            <option value="Pass (Weekly/Monthly)">Pass (Weekly/Monthly)</option>
+        </select>
+        <div class="payment-section">
+            <button onclick="processPayment()">Pay & Generate Ticket</button>
+        </div>
+    </div>
+
+    <!-- Active Tickets Section -->
+    <div class="section active-tickets">
+        <h2>Active Tickets</h2>
+        <div id="activeTickets"></div>
+    </div>
+
+    <!-- Ticket History Section -->
+    <div class="section ticket-history">
+        <h2>Ticket History</h2>
+        <div id="ticketHistory"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="icon">
+            <i>🏠</i>
+            <span><a href="{% url 'home' %}">Home</a></span>
+        </div>
+        <div class="icon">
+            <i>🚌</i>
+            <span><a href="#">Tracking</a></span>
+        </div>
+        <div class="icon">
+            <i>🔍</i>
+            <span><a href="{% url 'search_routes' %}">Search</a></span>
+        </div>
+        <div class="icon">
+            <i>🎫</i>
+            <span><a href="{% url 'book_ticket' route_id=route_id %}">Tickets</a></span>
+        </div>
+        <div class="icon">
+            <i>👤</i>
+            <span><a href="{% url 'user_account' %}">Profile</a></span>
+        </div>
+    </nav>
+
+    <script>
+        // Ticket data arrays
+        const activeTickets = [];
+        const ticketHistory = [];
+
+        // Render Active Tickets
+        function renderActiveTickets() {
+            const container = document.getElementById('activeTickets');
+            container.innerHTML = '';
+            activeTickets.forEach((ticket, index) => {
+                container.innerHTML += `
+                    <div class="ticket-card">
+                        <div>
+                            <h3>${ticket.type}</h3>
+                            <p>Valid Until: ${ticket.validUntil}</p>
+                        </div>
+                        <div class="qr-code" onclick="alert('QR Code for Ticket ${index + 1}')">QR</div>
+                    </div>
+                `;
+            });
+        }
+
+        // Render Ticket History
+        function renderTicketHistory() {
+            const container = document.getElementById('ticketHistory');
+            container.innerHTML = '';
+            ticketHistory.forEach(ticket => {
+                container.innerHTML += `
+                    <div class="ticket-card">
+                        <div>
+                            <h3>${ticket.type}</h3>
+                            <p>Date: ${ticket.date}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Process Payment and Generate Ticket
+        function processPayment() {
+            const ticketType = document.getElementById('ticketType').value;
+            const validUntil = new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleString(); // Valid for 1 day
+            const ticket = { type: ticketType, validUntil: validUntil, date: new Date().toLocaleDateString() };
+
+            activeTickets.push(ticket);
+            ticketHistory.push(ticket);
+
+            renderActiveTickets();
+            renderTicketHistory();
+            alert('Ticket Purchased Successfully!');
+        }
+
+        // Initial Render
+        renderActiveTickets();
+        renderTicketHistory();
+    </script>
+</body>
+
+</html>

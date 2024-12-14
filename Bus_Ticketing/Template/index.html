@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusScout - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1, h2 {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(90deg, #2c3e50, #457b9d);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-top: 20px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #457b9d;
+            padding: 15px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .nav-item {
+            margin: 0 20px;
+            font-size: 18px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-item:hover {
+            color: #f77f00;
+        }
+
+        /* Button Styles */
+        .ticket-booking-button {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 20px;
+            background-color: #e63946;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .ticket-booking-button:hover {
+            background-color: #f77f00;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav .nav-item {
+                margin: 10px 0;
+            }
+
+            .ticket-booking-button {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'Bus_Ticketing\static\images\logo.jpg' %}" alt="BusScout Logo">
+        </div>
+        <h1>BusScout</h1>
+        <p>Your Smart Bus Travel Companion</p>
+    </header>
+    
+    <nav>
+        <a href="{% url 'search_routes' %}" class="nav-item">Search Routes</a>
+        <a href="{% url 'live_tracking' %}" class="nav-item">Live Tracking</a>
+        <a href="{% url 'timetables' %}" class="nav-item">Timetables</a>
+        <a href="{% url 'user_account' %}" class="nav-item">Account</a>
+        <a href="{% url 'logout' %}" class="nav-item">Logout</a>
+    </nav>
+    
+    <!-- Ticket Booking Button -->
+    <div style="text-align: center;">
+        <a href="{% url 'search_routes' %}" class="ticket-booking-button">Book Your Ticket</a>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 BusScout. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

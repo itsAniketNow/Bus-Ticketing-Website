@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account & Notifications</title>
+    <style>
+        /* Your existing styles... */
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>User Account & Notifications</h1>
+    </header>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="profile-pic">
+                {% if user_profile.profile_image %}
+                    <img src="{{ user_profile.profile_image.url }}" alt="Profile Image" width="120" height="120">
+                {% else %}
+                    <p>Upload</p>
+                {% endif %}
+                <input type="file" name="profile_image" />
+            </div>
+            <div class="profile-details">
+                <input type="text" name="full_name" placeholder="Full Name" value="{{ user_profile.full_name }}" required />
+                <input type="email" name="email" placeholder="Email" value="{{ user_profile.email }}" required />
+                <input type="tel" name="phone_number" placeholder="Phone Number" value="{{ user_profile.phone_number }}" required />
+            </div>
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+
+    <!-- Preferences Section -->
+    <div class="preferences-section">
+        <h2>Preferences</h2>
+        <div class="saved-routes">
+            <h3>Saved Routes:</h3>
+            <p>{% for route in saved_routes %}{{ route.route_name }}{% endfor %}</p>
+        </div>
+        <div class="favorite-routes">
+            <h3>Favorite Routes:</h3>
+            <p>{% for route in favorite_routes %}{{ route.route_name }}{% endfor %}</p>
+        </div>
+    </div>
+
+    <!-- Notifications Section -->
+    <div class="notifications-section">
+        <h2>Notifications</h2>
+        <div class="notifications-list">
+            {% for notification in notifications %}
+                <div class="notification-item">
+                    <div class="notification-icon">🚌</div>
+                    <div>
+                        <div class="notification-title">{{ notification.title }}</div>
+                        <div class="notification-desc">{{ notification.description }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="clear-all">
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" name="clear_notifications" value="True">Clear All</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="icon"><i>🏠</i><span><a href="{% url 'home' %}">Home</a></span></div>
+        <div class="icon"><i>🚌</i><span><a href="{% url 'tracking' %}">Tracking</a></span></div>
+        <div class="icon"><i>🔍</i><span><a href="{% url 'route_search' %}">Search</a></span></div>
+        <div class="icon"><i>🎫</i><span><a href="{% url 'tickets' %}">Tickets</a></span></div>
+        <div class="icon"><i>👤</i><span><a href="{% url 'user_account' %}">Profile</a></span></div>
+    </nav>
+</body>
+</html>
