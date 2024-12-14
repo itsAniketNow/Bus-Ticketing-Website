@@ -77,7 +77,7 @@ cd bus-reservation-system
 ~~~
 
 python -m venv venv
-source venv/bin/activate   
+source myenv/bin/activate   
 # On Windows: "venv\Scripts\activate"
 ~~~
 
