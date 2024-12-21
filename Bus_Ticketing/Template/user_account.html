@@ -5,7 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Account & Notifications</title>
     <style>
-        /* Your existing styles... */
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00204A;
+            color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #001A3A;
+            border-bottom: 2px solid #00D6C6;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #00D6C6;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #00D6C6;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .profile-section,
+        .preferences-section,
+        .notifications-section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #003A63;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .profile-pic img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #005A8C;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #00D6C6;
+            color: #00204A;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #01C2AE;
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: center;
+            background-color: #005A8C;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .clear-all button {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #001A3A;
+            border-top: 2px solid #00D6C6;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #00D6C6;
+        }
+
+        nav .icon a {
+            color: #00D6C6;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav .icon i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .profile-section,
+            .preferences-section,
+            .notifications-section {
+                padding: 15px;
+                width: 95%;
+            }
+
+            nav .icon a {
+                font-size: 12px;
+            }
+
+            nav .icon i {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -73,9 +219,9 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="icon"><i>🏠</i><span><a href="{% url 'home' %}">Home</a></span></div>
-        <div class="icon"><i>🚌</i><span><a href="{% url 'tracking' %}">Tracking</a></span></div>
-        <div class="icon"><i>🔍</i><span><a href="{% url 'route_search' %}">Search</a></span></div>
-        <div class="icon"><i>🎫</i><span><a href="{% url 'tickets' %}">Tickets</a></span></div>
+        <div class="icon"><i>🚌</i><span><a href="{% url 'live_tracking' %}">Tracking</a></span></div>
+        <div class="icon"><i>🔍</i><span><a href="{% url 'search_routes' %}">Search</a></span></div>
+        <div class="icon"><i>🎫</i><span><a href="{% url 'book_ticket' route_id=1 %}">Tickets</a></span></div>
         <div class="icon"><i>👤</i><span><a href="{% url 'user_account' %}">Profile</a></span></div>
     </nav>
 </body>

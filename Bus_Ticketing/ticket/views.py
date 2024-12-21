@@ -83,7 +83,7 @@ def signup(request):
 
 @login_required
 # View for ticket booking
-def ticket_booking(request, route_id    ):
+def ticket_booking(request, route_id):
     route = get_object_or_404(Route, pk=route_id)  # Get the selected route
     
     if request.method == 'POST':
@@ -101,7 +101,7 @@ def ticket_booking(request, route_id    ):
         
         return redirect('active_tickets')  # Redirect to the active tickets page
 
-    return render(request, 'ticket_booking.html', {'route_id': route_id}    )
+    return render(request, 'ticket_booking.html', {'route_id': route_id})
 
 @login_required
 # View for active tickets
@@ -119,7 +119,8 @@ def ticket_history(request):
 # View for User Account (Profile, Routes, Notifications)
 @login_required
 def user_account(request):
-    user_profile = UserProfile.objects.get(user=request.user)
+    # Ensure user profile exists or create it if necessary
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
 
     # If the user submits an updated profile
     if request.method == 'POST':
@@ -148,6 +149,7 @@ def user_account(request):
         'favorite_routes': favorite_routes,
         'notifications': notifications,
     })
+
 
 # Logout view
 def logout_view(request):

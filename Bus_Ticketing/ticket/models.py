@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -31,13 +33,15 @@ class Ticket(models.Model):
         return f"{self.user.username} - {self.route} - {self.ticket_type}"
     
 
-    # Model for User Profile
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=15)
     profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
+    phone_number = models.CharField(max_length=15, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    full_name = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.user.username
 
     def __str__(self):
         return self.full_name
