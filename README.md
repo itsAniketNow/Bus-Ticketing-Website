@@ -1,6 +1,6 @@
-# **Bus Reservation** ,,
+# **Bus Ticket Booking** ,,
 
-A fully functional Bus Reservation System designed to allow users to search for buses, book tickets, and manage reservations with ease. This project demonstrates the integration of modern frontend, backend, and database technologies to create a seamless user experience.
+A fully functional Bus Ticket Booking System designed to allow users to search for buses, book tickets, and manage Ticket Bookings with ease. This project demonstrates the integration of modern frontend, backend, and database technologies to create a seamless user experience.
 
 
 
@@ -18,10 +18,10 @@ A fully functional Bus Reservation System designed to allow users to search for 
 - Search for available buses based on travel dates and routes.
 - Select and reserve specific seats.
 
-### **3. Reservation Management:**
+### **3. Ticket Booking Management:**
 
 - View and manage user bookings.
-- Cancel reservations if required.
+- Cancel Ticket Bookings if required.
 
 ### **4. Admin Panel:**
 
@@ -44,7 +44,7 @@ A fully functional Bus Reservation System designed to allow users to search for 
 
 ### **Database:**
 
-- **SQLite:** For storing user accounts, bus schedules, and reservations.
+- **SQLite:** For storing user accounts, bus schedules, and Ticket Bookings.
 
 ### **Other Tools:**
 
@@ -54,7 +54,7 @@ A fully functional Bus Reservation System designed to allow users to search for 
 
 ## **Getting Started**
 
-Follow the steps below to set up the Bus Reservation System on your local machine.
+Follow the steps below to set up the Bus Ticket Booking System on your local machine.
 
 ### **Prerequisites**
 Ensure you have the following installed:
@@ -69,15 +69,15 @@ Ensure you have the following installed:
 **Clone the Repository:**
 
 ~~~
-git clone https://github.com/<your-username>bus-reservation-system.git
-cd bus-reservation-system
+git clone https://github.com/<your-username>bus-Ticket Booking-system.git
+cd bus-Ticket Booking-system
 ~~~
 
 **Create a Virtual Environment:**
 ~~~
 
 python -m venv venv
-source venv/bin/activate   
+source myenv/bin/activate   
 # On Windows: "venv\Scripts\activate"
 ~~~
 
@@ -117,19 +117,19 @@ Navigate to http://127.0.0.1:8000 in your browser to access the application.
 - Select a bus and choose your preferred seats.
 - Confirm and make your booking.
 
-**3.Manage Reservations:**
+**3.Manage Ticket Bookings:**
 
-- View all your bookings in the My Reservations section.
+- View all your bookings in the My Ticket Bookings section.
 - Cancel bookings if necessary.
 
 ### **For Admins:**
 
 1. Login to the Django Admin Panel at /admin.
-2. Manage buses, schedules, users, and reservations directly from the panel.
+2. Manage buses, schedules, users, and Ticket Bookings directly from the panel.
 
 ## **Directory Structure**
 ~~~
-bus-reservation-system/
+bus-Ticket Booking-system/
 │
 ├── templates/                  # HTML templates for frontend pages
 │   ├── home.html               # Home template for all pages
@@ -160,7 +160,7 @@ bus-reservation-system/
 
 1. models.py:
 
-    - Contains database models for users, buses, reservations, etc.
+    - Contains database models for users, buses, Ticket Bookings, etc.
 2. views.py:
 
     - Handles the core business logic (e.g., booking process, search functionality).
