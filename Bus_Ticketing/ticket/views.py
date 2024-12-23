@@ -5,9 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile, SavedRoute, FavoriteRoute, Notification
-from .forms import UserProfileForm, NotificationForm
+from .forms import UserProfileForm
+from .models import BusTimetable
 from django.utils import timezone
-from django.http import JsonResponse
 # import qrcode  # To generate QR codes
 import json
 
@@ -34,14 +34,6 @@ def search_routes(request):
     return render(request, 'route_search.html', {
         'routes_json': routes_json
     })
-
-# View for live tracking
-def live_tracking(request):
-    return render(request, 'live_tracking.html')
-
-# View for timetables
-def timetables(request):
-    return render(request, 'timetables.html')
 
 
 # View for login
@@ -158,3 +150,9 @@ def logout_view(request):
 
 def logout_message(request):
     return render(request, 'logout_message.html')
+
+
+@login_required
+def bus_timetable(request):
+    timetable = BusTimetable.objects.all()
+    return render(request, 'bus_timetable.html', {'timetable': timetable})

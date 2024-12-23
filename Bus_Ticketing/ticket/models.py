@@ -71,3 +71,13 @@ class Notification(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class BusTimetable(models.Model):
+    route = models.CharField(max_length=255)
+    departure_time = models.TimeField()
+    arrival_time = models.TimeField()
+    frequency = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.route} ({self.frequency})"
